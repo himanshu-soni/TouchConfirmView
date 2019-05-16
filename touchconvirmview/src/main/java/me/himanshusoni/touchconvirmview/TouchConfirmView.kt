@@ -3,15 +3,9 @@ package me.himanshusoni.touchconvirmview
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.os.Build
 import android.util.AttributeSet
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.annotation.RequiresApi
-import androidx.core.view.forEach
-import androidx.core.view.setMargins
-import androidx.core.view.setPadding
-
 
 class TouchConfirmView : LinearLayout {
 
@@ -40,7 +34,6 @@ class TouchConfirmView : LinearLayout {
         init(attrs, defStyle)
     }
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     constructor(context: Context, attrs: AttributeSet, defStyle: Int, defStyleRes: Int) : super(
         context,
         attrs,
@@ -51,7 +44,7 @@ class TouchConfirmView : LinearLayout {
     }
 
     private fun init(attrs: AttributeSet? = null, defStyle: Int = 0, defStyleRes: Int = 0) {
-        setPadding(4.dpToPx().toInt())
+        setPadding(4.dpToPx().toInt(), 4.dpToPx().toInt(), 4.dpToPx().toInt(), 4.dpToPx().toInt())
 
         val a = context.obtainStyledAttributes(attrs, R.styleable.TouchConfirmView, defStyle, defStyleRes)
 
@@ -93,7 +86,7 @@ class TouchConfirmView : LinearLayout {
         val tv = TextView(context)
 
         val lp = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
-        lp.setMargins(4.dpToPx().toInt())
+        lp.setMargins(4.dpToPx().toInt(), 4.dpToPx().toInt(), 4.dpToPx().toInt(), 4.dpToPx().toInt())
         tv.layoutParams = lp
 
         tv.setPadding(16.dpToPx().toInt(), 8.dpToPx().toInt(), 16.dpToPx().toInt(), 8.dpToPx().toInt())
@@ -127,8 +120,8 @@ class TouchConfirmView : LinearLayout {
 
     fun isTouchConfirmed(): Boolean {
         var allConfirmed = childCount > 0
-        forEach {
-            if (!it.isSelected) {
+        for (childIndex in 0 until childCount) {
+            if (!getChildAt(childIndex).isSelected) {
                 allConfirmed = false
             }
         }
