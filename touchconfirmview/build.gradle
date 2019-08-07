@@ -5,16 +5,13 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 2
-        versionName "0.9-beta2"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        targetSdkVersion 29
+        versionCode 4
+        versionName "0.9-beta4"
     }
 
     buildTypes {
@@ -29,6 +26,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation "me.himanshusoni.androidessentials:basicextensions:$androidEssentialsVersion"
 }
 repositories {
     mavenCentral()
@@ -47,7 +45,7 @@ ext {
     siteUrl = 'https://github.com/himanshu-soni/TouchConfirmView'
     gitUrl = 'https://github.com/himanshu-soni/TouchConfirmView.git'
 
-    libraryVersion = '0.9-beta2'
+    libraryVersion = '0.9-beta3'
 
     developerId = 'himanshu-soni'
     developerName = 'Himanshu Soni'

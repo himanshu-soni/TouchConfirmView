@@ -2,18 +2,20 @@
 
 buildscript {
     ext {
-
         androidXVersion = '1.0.2'
         constraintLayoutVersion = '1.1.3'
+        androidEssentialsVersion = '1.0.13'
 
-        kotlinVersion = '1.3.31'
-        gradleVersion = '3.4.1'
+        kotlinVersion = '1.3.41'
+        gradleVersion = '3.4.2'
     }
+
     repositories {
         google()
         jcenter()
 
     }
+
     dependencies {
         classpath "com.android.tools.build:gradle:$gradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"

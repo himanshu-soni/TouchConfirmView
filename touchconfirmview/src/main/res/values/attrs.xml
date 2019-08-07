@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TouchConfirmView">
+        <attr name="text" format="string"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="textAllCaps" format="boolean"/>
+        <attr name="textColorNormal" format="color"/>
+        <attr name="textColorConfirmed" format="color"/>
+        <attr name="textPadding" format="dimension"/>
+        <attr name="textMargin" format="dimension"/>
+        <attr name="textBackgroundNormal" format="color|reference"/>
+        <attr name="textBackgroundConfirmed" format="color|reference"/>
+    </declare-styleable>
+</resources>
